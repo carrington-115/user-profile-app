@@ -11,7 +11,6 @@
   font-family: Arial;
   background: white;
   height: 1cm;
-  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
 header {
@@ -31,18 +30,73 @@ nav {
   top: 0;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .page-cont {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   justify-self: flex-end;
+  margin-right: 2cm;
 }
 .page-cont h2 {
   margin: 0 7px;
   font-family: arial;
   font-size: 15px;
   color: white;
+}
+.account-drop-down,
+.profile-drop-down,
+.feedback-drop-down {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-down {
+  display: none;
+  position: absolute;
+  padding: 0.25cm 0.5cm;
+  min-width: 100px;
+  background-color: white;
+  box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.drop-down a {
+  font-family: arial;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 2.5px 0px;
+}
+.drop-down a:hover {
+  color: #ff9fad;
+}
+
+.account-drop-down:hover .drop-down {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.profile-drop-down:hover .drop-down {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.feedback-drop-down:hover .drop-down {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.page-cont h2:hover {
+  color: black;
 }
 .logo-img img {
   width: 100%;
@@ -60,7 +114,8 @@ nav {
   width: 100%;
   height: 100%;
   border-radius: 10%;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5); */
+  border: 1.5px solid white;
 }
 
 .person-image {
@@ -95,10 +150,10 @@ nav {
   border: 1px solid transparent;
   border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .account-btn:hover {
-  border: 1px solid black;
   color: black;
 }
 
@@ -120,8 +175,45 @@ nav {
   cursor: pointer;
 }
 
-.start-here:hover{
+.start-here:hover {
   background-color: white;
   border: 1px solid black;
   color: black;
+}
+
+.feature {
+  position: relative;
+  background-color: #ff9fad;
+  margin-bottom: 3cm;
+  width: 80%;
+  min-height: 50vh;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.feature-image {
+  width: 8cm;
+  position: absolute;
+  top: 1cm;
+  left: 1cm;
+}
+
+.feature-text {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  position: absolute;
+  right: 1.5cm;
+  top: 2cm;
+  color: white;
+}
+
+.feature-text h1 {
+  text-align: left;
+  width: 7cm;
+  font-size: 20px;
 }
