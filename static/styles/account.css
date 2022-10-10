@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2cm;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #ff9fad;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  justify-self: flex-end;
+  margin-right: 2cm;
+}
+.page-cont h2 {
+  margin: 0 7px;
+  font-family: arial;
+  font-size: 15px;
+  color: white;
+}
+.account-drop-down,
+.profile-drop-down,
+.feedback-drop-down {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-down {
+  display: none;
+  position: absolute;
+  padding: 0.25cm 0.5cm;
+  min-width: 100px;
+  background-color: white;
+  box-shadow: 0.5px 0.5px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+.drop-down a {
+  font-family: arial;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+  margin: 2.5px 0px;
+}
+.drop-down a:hover {
+  color: #ff9fad;
+}
+
+.account-drop-down:hover .drop-down {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.profile-drop-down:hover .drop-down {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.feedback-drop-down:hover .drop-down {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.page-cont h2:hover {
+  color: black;
+}
+.logo-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-img {
+  width: 5cm;
+  justify-self: flex-start;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.start {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  color: grey;
+  margin: 20px 0px;
+}
+
+.start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.name,
+.email {
+  width: 15cm;
+}
+input {
+  font-size: 15px;
+  padding: 5px 5px;
+  margin: 5px 0px 10px 0px;
+}
+
+.country-part {
+  margin: 10px 0px;
+}
+.interest,
+.gender {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.other {
+  width: 10cm;
+}
+
+fieldset label {
+  margin-right: 20px;
+}
+.skills {
+  width: 10cm;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  background-color: #ff9fad;
+  padding: 10px 20px;
+  font-size: 15px;
+  margin-bottom: 2cm;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+.submit:hover {
+  color: black;
+  border-color: black;
+}
+#country {
+  padding: 5px 0px;
+}
