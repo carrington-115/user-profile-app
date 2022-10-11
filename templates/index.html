@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/index.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome page</title>
+  </head>
+  <body>
+    <div class="page-def">WELCOME TO YOUR USER PROFILE APP</div>
+    <header>
+      <nav class="header-navigation">
+        <a class="logo-img" href="{{ url_for('index') }}">
+          <img
+            src="{{ url_for('static', filename='images/user-profile-logo.png') }}"
+            alt="user-profile-logo"
+            class="logo"
+          />
+        </a>
+        <div class="page-cont">
+          <div class="account-drop-down">
+            <h2 class="account">Account</h2>
+            <div class="drop-down">
+              <a href="{{ url_for('create_account') }}">Create an Account</a>
+              <a href="{{ url_for('index') }}">Sign in</a>
+              <a href="{{ url_for('index') }}">Sign out</a>
+              <a href="{{ url_for('index') }}">Delete Account</a>
+            </div>
+          </div>
+          <div class="profile-drop-down">
+            <h2 class="profile">Profile</h2>
+            <div class="drop-down">
+              <a href="{{ url_for('index') }}">View Profile</a>
+              <a href="{{ url_for('index') }}">Edit Profile</a>
+            </div>
+          </div>
+          <div class="feedback-drop-down">
+            <h2 class="feedback">Feedback</h2>
+            <div class="drop-down">
+              <a href="{{ url_for('index') }}">User feedback</a>
+              <a href="{{ url_for('index') }}">Feedback segment</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="person-image">
+        <img
+          src="{{ url_for('static', filename='images/girl-user-picture.png') }}"
+          alt="person-image"
+        />
+      </div>
+      <div class="text-container">
+        <h1>Start your Journey to Create, build, and Furnish your Profile</h1>
+        <a class="account-btn" href="{{ url_for('create_account') }}"
+          >Create your Account</a
+        >
+      </div>
+    </header>
+    <div class="continuation">
+      <button class="start-here">Start Your Journey Here</button>
+    </div>
+    <div class="content">
+      <div class="feature">
+        <div class="feature-image">
+          <img
+            src="{{ url_for('static', filename='images/skills.jpg') }}"
+            alt="skills"
+          />
+        </div>
+        <div class="feature-text">
+          <h1>Present Your Skills in an Easy and Communicable manner</h1>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-image">
+          <img
+            src="{{ url_for('static', filename='images/connections.jpg') }}"
+            alt="skills"
+          />
+        </div>
+        <div class="feature-text">
+          <h1>Make connections with people of Similar Interest</h1>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-image">
+          <img
+            src="{{ url_for('static', filename='images/groups.jpg') }}"
+            alt="skills"
+          />
+        </div>
+        <div class="feature-text">
+          <h1>Create and Join groups and communities of your interest</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
