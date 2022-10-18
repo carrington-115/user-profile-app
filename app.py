@@ -33,6 +33,7 @@ def index():
 
 @app.route('/create-account', methods=["GET", "POST"])
 def create_account():  # the account creation page route
+    # receiving data from the profile creation form
     if request.method == 'POST':
         session['name'] = request.form.get('fullname')
         session['email'] = request.form.get('email')
@@ -45,6 +46,7 @@ def create_account():  # the account creation page route
         user = userProfile(name=session.get('name'), date_of_birth=session.get('dateofbirth'), email=session.get('email'), 
         country=session.get('country'), gender=session.get('gender'), interest=session.get('interest'), skills=session.get('skills'))
         db.session.add(user)
+        db.session.commit()
         return redirect('/profile-report-page')
     return render_template('create_account.html')
 
@@ -52,12 +54,21 @@ def create_account():  # the account creation page route
 # the next step is to give the user a report that the account has been created
 @app.route('/profile-report-page')  # the report page app
 def accountReport():
-    name = session.get('name')
-    page_title = "Account Created"
-    message=f'Congratulations {name} for taking this first step. You have Successfully created your account'
-    link_text = "View your Profile"
-    return render_template('reporttemplate.html', pagetitle=page_title, pagecontent=message, linktext=link_text)
+    name = session.get('name') # name of the user
+    page_title = "Account Created" # The title of the report page
+    message=f'Congratulations {name} for taking this first step. You have Successfully created your account' # The report message
+    link_text = "Proceed to your Profile" # The proceed link name
+    proceed_link = f'/profile/{name}'
+    return render_template('reporttemplate.html', after_url=proceed_link, pagetitle=page_title, pagecontent=message, linktext=link_text) # What to render on the page
+
 
 @app.route('/profile')
 def user_profile():
-    return 'profile page random text'
+    name = session.get('name')
+    date = session.get('date')
+    email = session.get('email')
+    country = session.get('country')
+    interest = session.get('interest')
+    skills = session.get('skills')
+    return render_template('profile.html', profile_name=name, email=email, 
+    country=country, skills=skills, date=date, interest=interest)
