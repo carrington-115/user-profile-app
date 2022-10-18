@@ -11,22 +11,29 @@
     <title>{{ profile_name }} Profile</title>
   </head>
   <body>
-    <div class="user-info">
-      <h1>{{ profile_name }}</h1>
-      <h2 class="email">{{ email }}</h2>
-      <h2 class="country">{{ country }}</h2>
-      <h2 class="date">{{ date }}</h2>
+    <div class="info-container">
+      <div class="profile-letter">{{ letter }}</div>
+      <div class="user-info">
+        <h1>{{ profile_name }}</h1>
+        <h2 class="email">{{ email }}</h2>
+        <h2 class="country">{{ country }}</h2>
+        <h2 class="date">{{ date }}</h2>
+      </div>
     </div>
+
     <div class="content">
       <div class="interest">
-        <p>Interest: </p>
+        <p>Interest:</p>
         <h2>{{ interest }}</h2>
       </div>
       <div class="skills-content">
-        <p>skills: </p>
+        <p>skills:</p>
         <h2>{{ skills }}</h2>
       </div>
-      <div class="edit"></div>
+      <div class="proceed-btns">
+        <a class="edit-profile-btn" href="">Edit Profile</a>
+        <a class="continue-btn" href="">Proceed to Home page</a>
+      </div>
     </div>
   </body>
 </html>

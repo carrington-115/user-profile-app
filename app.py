@@ -65,10 +65,12 @@ def accountReport():
 @app.route('/profile')
 def user_profile():
     name = session.get('name')
+    name_string_var = str(name)
+    first_letter = name_string_var[0].upper()
     date = session.get('date')
     email = session.get('email')
     country = session.get('country')
     interest = session.get('interest')
     skills = session.get('skills')
     return render_template('profile.html', profile_name=name, email=email, 
-    country=country, skills=skills, date=date, interest=interest)
+    country=country, skills=skills, date=date, letter=first_letter, interest=interest)
