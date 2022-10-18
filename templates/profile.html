@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/profile.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ profile_name }} Profile</title>
+  </head>
+  <body>
+    <div class="user-info">
+      <h1>{{ profile_name }}</h1>
+      <h2 class="email">{{ email }}</h2>
+      <h2 class="country">{{ country }}</h2>
+      <h2 class="date">{{ date }}</h2>
+    </div>
+    <div class="content">
+      <div class="interest">
+        <p>Interest: </p>
+        <h2>{{ interest }}</h2>
+      </div>
+      <div class="skills-content">
+        <p>skills: </p>
+        <h2>{{ skills }}</h2>
+      </div>
+      <div class="edit"></div>
+    </div>
+  </body>
+</html>

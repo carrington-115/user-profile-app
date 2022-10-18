@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/apphomelayout.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>document</head>
+  </head>
+  <body>
+    <header>
+      <div class="profile-page">
+        <a href="{{ url_for() }}">
+          <div class="profile-image">A</div>
+        </a>
+      </div>
+      <nav>
+        <a class="home">
+          <div class="image">
+            <img
+              src="{{ url_for('static', filename='images/icons/home.png') }}"
+              alt="home-icon"
+            />
+          </div>
+          <p>Home</p>
+        </a>
+        <div class="user">
+          <img
+            src="{[ url_for('static', filename='images/icons/user.png') }}"
+            alt="users-icon"
+          />
+          <p>Users</p>
+        </div>
+        <div class="posts">
+          <img
+            src="{{ url_for('static', filename='images/icons/post.png') }}"
+            alt="post-icon"
+          />
+          <p>Posts</p>
+        </div>
+        <div class="connections">
+          <img
+            src="{{ url_for('static', filename='images/icons/connections.png') }}"
+            alt="connections-icon"
+          />
+          <p>Connections</p>
+        </div>
+      </nav>
+    </header>
+    <div class="content-body">
+      <div class="aside"></div>
+      <div class="content">{% block body%}{% endblock%}</div>
+      <div class="app-users"></div>
+    </div>
+  </body>
+</html>
